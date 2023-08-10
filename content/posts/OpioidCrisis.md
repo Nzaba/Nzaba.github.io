@@ -2,7 +2,7 @@
 title: "Opioid Crisis Dashboard"
 date: "2018-05-03"
 description: "Making Sense of The Opioid Crisis"
-tags: ["Public Health, ggplot, Shiny Server"]
+tags: ["Public Health"]
 ShowToc: true
 ShowBreadCrumbs: false
 ---

@@ -2,7 +2,7 @@
 title: "Modelling Changing Variance in Time Series"
 date: "2020-11-07"
 description: "Modelling Changing Variance in Time Series"
-tags: ["Public Health, ggplot, Shiny Server"]
+tags: ["Time Series Forecasting"]
 ShowToc: true
 ShowBreadCrumbs: false
 math: true

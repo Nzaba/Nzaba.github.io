@@ -2,7 +2,7 @@
 title: "Navigating the Unknown"
 date: "2020-12-01"
 description: "Harnessing KNN & Neural Nets to Assess Default Risk for Unbanked Loan Applicants"
-tags: ["Supervised Learning, Neural Networks, Classification, Unsupervised Learning, Factor Analysis"]
+tags: ["Machine Learning"]
 ShowToc: true
 ShowBreadCrumbs: false
 ---
