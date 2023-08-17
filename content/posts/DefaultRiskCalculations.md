@@ -1,5 +1,5 @@
 ---
-title: "Navigating the Unknown"
+title: "Default Risk Estimation Methods"
 date: "2020-12-01"
 description: "Harnessing KNN & Neural Nets to Assess Default Risk for Unbanked Loan Applicants"
 tags: ["Machine Learning"]
@@ -12,6 +12,8 @@ Harnessing KNN & Neural Nets to Assess Default Risk for Unbanked Loan Applicants
 <!--more-->
 
 ### Introduction
+
+<img loading="lazy" src="https://raw.githubusercontent.com/adityatelange/hugo-PaperMod/exampleSite/content/posts/papermod/papermod-features/images/profile.jpg" alt="profile">
 
 <p>Lending money is a profitable enterprise but only if you’re loaning to people that pay back their loans. Therefore, it is very important for banks and companies to be able to assess beforehand whether or not a person is likely to repay a loan. Many criteria have been considered over the years in attempts to gauge the responsibility of a borrower including but not limited to the borrower’s previous loan history, the area in which they are living, and how long it has been since they changed phone numbers. One of the key metrics used in the credit history, a measure of how you have behaved with previous loans calculated from how much you borrow, how often you make late payments, and how often you default. Most lending entities today prioritize credit history as their metric of choice when considering loan applications and often will not loan to applicants who cannot present a satisfactory credit history.
 

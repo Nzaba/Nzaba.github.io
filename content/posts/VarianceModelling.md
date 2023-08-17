@@ -8,7 +8,7 @@ ShowBreadCrumbs: false
 math: true
 ---
 
-Exposition of forecasting methods for modelling changing variance in time series
+Forecasting Methods for Modelling Changing Variance in Time Series
 
 <!--more-->
 
