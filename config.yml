@@ -76,10 +76,13 @@ params:
     homeInfoParams:
         Title: <h2>About<h2>
         Content: >
-            - Hi there! Welcome to my personal webpage where I share some of the things I’ve made including technical details, some inspiration and the process. I am passionate about projects that empower underserved communities by bridging the gap between cutting edge technology and equitable access. With focused training in developing data driven interventions and an understanding of the unique challenges faced by developing nations, I am driven by a desire to make meaningful contributions that improve service delivery and healthcare outcomes.
+            - Hi there! Welcome to my personal webpage where I share some of the things I’ve made including technical details, some inspiration and the process. 
             <br><br>
 
-            - **Skills and Interests**: Reproducible Research, Statistics, Product Development, Version Control, Deep Learning
+            - With focused training in Statistics and a heart for global change, I am driven by a desire to improve how science is done. I believe that creativity and research are essential for solving the world's most pressing problems. I am passionate about using my skills to think outside the box and to come up with new ideas that can make a difference. 
+            <br><br>
+
+            - **Skills and Interests**: Reproducible Research, Statistics, Product Development, Version Control, Deep Learning, Global Health
     socialIcons:
         - name: email
           url: "https://gmail.com"

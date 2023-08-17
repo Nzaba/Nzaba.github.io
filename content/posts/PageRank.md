@@ -14,7 +14,11 @@ The Secret Sauce Behind PageRank Algorithm
 
 ### 1. Abstract
 
-What happens when you search for a term on your browser? According to Google Inside Search, the web is teeming with trillions of pages which could act as potential sources of information. Google's PageRank algorithm has revolutionized how the world accesses data on the web. The computation involved in ordering search results entails the indexing of all these pages and the creation of high dimensional structures to store and calculate different probabilities. This paper provides a general overview of how the algorithm works by briefly exploring the general theory behind PageRank. In addition to explaining the mathematical foundations of PageRank, this paper presents a simulation meant to help the reader gain some intuition of the stochastic nature of this algorithm. Also, it looks at some of the caveats including how Google deals with dangling links.
+What happens when you search for a term on your browser? Google's PageRank algorithm has revolutionized how the world accesses data on the web. The computation involved in ordering search results entails the indexing of trillions of pages and the creation of high dimensional structures to store and calculate different probabilities. This article provides a general overview of how the algorithm works by briefly exploring the general theory behind PageRank. In addition to explaining the mathematical foundations of PageRank, this article will present a simulation meant to help the reader gain some intuition of the stochastic nature of this algorithm. Also, it looks at some of the caveats including how PageRank deals with dangling links.
+
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Random%20Surfer.jpeg">
+
+> Random surfer on the web
 
 ### 2. Introduction
 
@@ -131,9 +135,26 @@ A <- A_gen(10, .6)
 <pre class="r"><code>
 # Plot the graph
 plot(graph.adjacency(A,'directed'))
+</code></pre>
 
-# Run PageRank on example graph above with d = 0.2
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Graph%20Simulation.jpeg">
+
+<pre class="r"><code># Run PageRank on example graph above with d = 0.2
 PageRank(A, .2)
+</code></pre>
+
+<pre class="r"><code>## 
+## Node:   PageRank
+## 2       0.1419	     
+## 1       0.1143	  
+## 3       0.1103	  
+## 9	   0.1078
+## 10      0.1056     
+## 7       0.0995  
+## 6       0.0916  
+## 4	   0.0904	
+## 8       0.0803     
+## 5       0.0582  
 </code></pre>
 
 
