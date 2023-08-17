@@ -1,7 +1,7 @@
 ---
 title: "Markov Chains Demystified"
 date: "2023-08-14"
-description: "The Secret Sauce of PageRank"
+description: "The Secret Sauce Behind PageRank Algorithm"
 tags: ["Big Data, Information Retrieval, Graph Theory"]
 ShowToc: true
 ShowBreadCrumbs: false

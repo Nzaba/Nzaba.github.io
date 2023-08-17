@@ -85,13 +85,13 @@ params:
             - **Skills and Interests**: Reproducible Research, Statistics, Product Development, Version Control, Deep Learning, Global Health
     socialIcons:
         - name: email
-          url: "https://gmail.com"
+          url: "mailto:hi@raynzaba.com"
         - name: github
-          url: "github.com"
+          url: "github.com/Nzaba"
         - name: kaggle
-          url: "github.com"
+          url: "https://www.kaggle.com/raymondnzaba"
         - name: researchgate
-          url: "github.com"
+          url: "https://www.researchgate.net/profile/Raymond-Saitoti"
 
     editPost:
         URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
