@@ -84,8 +84,7 @@ A_gen <- function (n, d) {
 
 
 
-<pre class="r"><code>
-# Define PageRank function (p = probability of teleport)
+<pre class="r"><code># Define PageRank function (p = probability of teleport)
 PageRank <- function (A, p, output = T) {
   # Define assertions
   if (!is.matrix(A) | !all(A %in% 0:1)) {
@@ -124,16 +123,14 @@ PageRank <- function (A, p, output = T) {
 
 </code></pre>
 
-<pre class="r"><code>
-# Generate graph
+<pre class="r"><code># Generate graph
 set.seed(327)
 A <- A_gen(10, .6)
 </code></pre>
 
 2. The process modeled above is ran on a graph with 10 vertices and `r sum(A)` edges. A visual representation of how different nodes in the graph are connected is also generated. Below it, is output showing the page ranks of all 10 nodes.
 
-<pre class="r"><code>
-# Plot the graph
+<pre class="r"><code># Plot the graph
 plot(graph.adjacency(A,'directed'))
 </code></pre>
 
@@ -167,7 +164,7 @@ The original paper on PageRank by Brin et al (1998) presents dangling links on t
 
 ### 4. Conclusion
 
-PageRank is a powerful tool that has greatly simplified and democratized the access to information on the web. The advent of this algorithm has seen the emergence of a Search Engine Optimization industry which is a discipline focused on organically increasing the reputation of online content to increase visibility and improve rankings on the web. However, one of the major challenges this poses to PageRank is that commercial entities may try to artificially game the system to increase the visibility of their content online.
+PageRank is a powerful tool that has greatly simplified and democratized the access to information on the web. The advent of this algorithm has seen the emergence of a Search Engine Optimization industry which is a discipline focused on organically increasing the reputation of online content to increase visibility and improve rankings on the web. However, one of the major challenges this poses to PageRank is that commercial entities may try to artificially game the system to increase the visibility of their online content.
 
 
 ### 5. References
