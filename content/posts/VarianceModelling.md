@@ -24,12 +24,9 @@ Before we begin any model fitting, we make the line graphs shown below. This ste
 
 The data wrangling required before fitting the model/ checking conditions is minimal. It begins by decomposing Chesapeake monthly data time series into seasonal, trend and irregular components, then moves on to the removal of seasonal components to create a seasonally adjusted component.
 
-Insert image here
-
-
-![Img_1](images/img1.jpg)
-
-
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Arima%20Intro.jpeg">
+</center>
 
 
 #### Model Conditons
@@ -109,7 +106,9 @@ Before settling down on the model obtained from the previous section, we examine
             main = "ARIMA (4, 1, 3) Diagnostic plots") 
 </code></pre>
 
-Insert diagnostic plots here
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Arima413%20Diagnostic.jpeg">
+</center>
 
 A quick examination of the ACF plot reveals the existence of excessive correlations in the residuals at lags 3 and 6. Furthermore, the lag patterns in the PACF are quite similar to those in the ACF plot, suggesting the existence of autocorrelation. This problem in distribution of error terms also manifests itself in the residuals, and can be seen from the unequal variation of error terms across the range of values in the residual plot.
 
@@ -155,8 +154,9 @@ arch.plt <- ggplot(sim_data, aes(x = seq.1..400., y = garch01.sim )) + geom_line
   ggtitle("Simulated ARCH(1) process")
 ggplotly(arch.plt)</code></pre>
 
-Insert Simulated arch process image
-
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Arch1%20SImulation.jpeg">
+</center>
 
 ##### 2. GARCH models
 
@@ -168,8 +168,9 @@ The $\beta$ coefficients in the model are used to assign weights to the lags of 
 
 The plot below (Cryer and Chan, 2008) illustrates an example of a simulated GARCH(1,1) process with parameter values $$\omega=0.02, \alpha=0.05, \text { and } \beta = 0.9$$
 
-
-Insert simulated garch process
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Garch11%20SIm.jpeg">
+</center>
 
 The parameters $\omega, \beta, \alpha$ in GARCH and $\omega, \alpha$ in ARCH are constrained to $>0$, since the conditional variances have to be positive.
 
@@ -198,14 +199,20 @@ Before we accept the model we found in the previous section we need to make sure
 <pre class="r"><code>#QQplot to check for normality
 qqnorm(residuals(fit_mod1)); qqline(residuals(fit_mod1))</code></pre>
 
-Insert QQ plot here
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/QQ%20Plot.jpeg">
+</center>
 
 <pre class="r"><code>#Sample acf and pacf plots to check iid assumption
 ggtsdisplay(residuals(fit_mod1), plot.type = "partial",
             main = "Chesapeak Energy Corporation's GARCH (1, 1) Diagnostic plots")</code></pre>
 
 
-Insert Another diagnostic plot
+
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Diagnostic2.jpeg">
+</center>
+
 
 From the diagnostic plots made above, we see a major problem with normality, as most of the points on the qqplot veer off the line. In addition, there seems to be major issues with independence, as can be seen from the significant lags in residuals from the autocorrelation plots.
 
@@ -224,7 +231,10 @@ fit_mod1@fit$matcoef</code></pre>
 ## alpha1  0.40407479  0.05760516   7.014559 2.306821e-12
 ## beta1   0.51414297  0.06573577   7.821358 5.329071e-15</code></pre>
 
-The return at time t as given by our model is going to be given by (Boudt, 2020) : $$R_{t} = 16.97 +e_{t}$$ where the $e_{t}$ is a normally distributed random variable with a mean of 0 and variance of $\widehat{\sigma}_{t}^{2}$ i.e $e_{t} \sim N\left(0, \widehat{\sigma}_{t}^{2}\right)$. The variance modelling return volatility at the $t^{th}$ time step in our fitted model is going to be $\widehat{\sigma}_{t}^{2}=0.05+0.40 e_{t-1}^{2}+0.51 \widehat{\sigma}_{t-1}^{2}$
+The return at time t as given by our model is going to be given by (Boudt, 2020) : $$R_{t} = 16.97 +e_{t}$$ where the $e_{t}$ is a normally distributed random variable with a mean of 0 and variance of
+{{< math.inline >}}
+$\widehat{\sigma}_{t}^{2}$ i.e $e_{t} \sim N\left(0, \widehat{\sigma}_{t}^{2}\right)$. The variance modelling return volatility at the $t^{th}$ time step in our fitted model is going to be $\widehat{\sigma}_{t}^{2}=0.05+0.40 e_{t-1}^{2}+0.51 \widehat{\sigma}_{t-1}^{2}$
+{{</ math.inline >}}
 
 
 The `ugarchroll()` function is used to obtain estimates for the last four dates in the data set. The test data that is used is the most recent week's returns in stock volume. The log volume residuals obtained after this process are printed down below :
