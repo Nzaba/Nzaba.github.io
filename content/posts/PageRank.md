@@ -137,7 +137,9 @@ A <- A_gen(10, .6)
 plot(graph.adjacency(A,'directed'))
 </code></pre>
 
+<center>
 <img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Graph%20Simulation.jpeg">
+</center>
 
 <pre class="r"><code># Run PageRank on example graph above with d = 0.2
 PageRank(A, .2)
@@ -180,9 +182,7 @@ PageRank is a powerful tool that has greatly simplified and democratized the acc
 
 5. Hwai-Hui Fu, et al. “APPLIED STOCHASTIC MODELS IN BUSINESS AND INDUSTRY.” Damping Factor in Google Page Ranking, 29 June 2006, pp. 1–14.
 
-6. R code used to run simulation was obtained from https://github.com/BartolomeD
-
-7. https://en.wikipedia.org/wiki/PageRank
+6. https://en.wikipedia.org/wiki/PageRank
 
 
 

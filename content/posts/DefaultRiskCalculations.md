@@ -67,12 +67,11 @@ The table above shows the first six client entries after obtaining the 9 variabl
 
 #### Exploratory Analysis
 
-A correlation matrix [Link] is constructed from the quantitative variables to get a closer look at correlation values as well as the distributions of the variables in our dataset. Most of the correlations were weak. The only strong correlation observed was between loan annuity and loan amount which makes sense since we would expect the bank to be willing to loan more money if more collateral is presented. Most of the variables are right skewed. It is also interesting to see the presence of multiple distinct peaks among the different variable distributions.
+A correlation matrix is constructed from the quantitative variables to get a closer look at correlation values as well as the distributions of the variables in our dataset. Most of the correlations were weak. The only strong correlation observed was between loan annuity and loan amount which makes sense since we would expect the bank to be willing to loan more money if more collateral is presented. Most of the variables are right skewed. It is also interesting to see the presence of multiple distinct peaks among the different variable distributions.
 
-insert correlation matrix image and caption
-
-
-
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Correlation_Matrix.jpeg">
+</center>
 
 ### Methods
 
@@ -80,12 +79,16 @@ insert correlation matrix image and caption
 
 In addition to being listed on this report, the experiments conducted in this study are shared and maintained on Tableau Public. Feel free to check out my published worksheet below!
 
-tableau link here
+<a href = "https://public.tableau.com/app/profile/ray5650#!/vizhome/KeyFindings/Results">
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Tableau.jpeg">
+</center>
+</a>
 
 #### Factor Analysis
 
 A Factor Analysis is more appropriate in this analysis than Principal Components Analysis because we are interested in seeing which latent indicators of trustworthiness / ability to pay back loans can be recovered from a set of manifest variables. A Maximum Likelihood Approach is used to determine, through repeated hypothesis testing, which number of factors is most appropriate.
-Add map2
+
 
 
 #### Classification
@@ -98,7 +101,7 @@ Add map2
 
 - The second classification method used was neural nets. Neural nets are composed of layers of weighted neurons that pass on 0 or 1 depending on whether the weighted sums of their inputs exceed their activation potential. The system is modeled after the function of the neurons in the human brain. By working on the training set iteratively, the weights of the neurons can be refined based on the misclassifications until all training samples are classified (or, to reduce over fitting, until a certain number of iterations have been reached). By layering these sets of neurons and having the outputs of one layer be fed into the next, you can do this weight-refining approach several times and achieve accuracy in complex classifications far beyond the scope of regression, as evidenced by their use in photo analysis, voice identification, and **of course** in our own heads.
 
-In this case, a holdout sample approach was used to evaluate the sufficiency of the neural network model. The proportions chosen were 75% ~ 25% for the train and test set respectively. The caret package is used to find the best parameters to use for this classifier. To kick start the process, we set up a grid of tuning parameters for the model, fitted each and calculated a bootstrapped AUC (Area under ROC curve) score for every hyper parameter combination. The values with the biggest AUC are chosen for the neural network. The preferred evaluation metric is AER and estimated TER, but the only available ones are: sensitivity, specificity, area under the ROC and AUC. It is worth noting that all available predictors are used to fit the model. The final parameters chosen are: three interconnected neuron layers with a decay rate of 0.5 (factor by which each weight is multiplied by after each update.)1 [link]. The weighted inputs and bias are summed to form the net input to the next layer. The inputs are mapped from layer to layer then finally fed into a sigmoid function that outputs the desired probability that a client will default.
+In this case, a holdout sample approach was used to evaluate the sufficiency of the neural network model. The proportions chosen were 75% ~ 25% for the train and test set respectively. The caret package is used to find the best parameters to use for this classifier. To kick start the process, we set up a grid of tuning parameters for the model, fitted each and calculated a bootstrapped AUC (Area under ROC curve) score for every hyper parameter combination. The values with the biggest AUC are chosen for the neural network. The preferred evaluation metric is AER and estimated TER, but the only available ones are: sensitivity, specificity, area under the ROC and AUC. It is worth noting that all available predictors are used to fit the model. The final parameters chosen are: three interconnected neuron layers with a decay rate of 0.5 (factor by which each weight is multiplied by after each update.)<sup><a href = "https://metacademy.org/graphs/concepts/weight_decay_neural_networks" >1</a></sup>. The weighted inputs and bias are summed to form the net input to the next layer. The inputs are mapped from layer to layer then finally fed into a sigmoid function that outputs the desired probability that a client will default.
 
 ### Results
 
@@ -106,8 +109,35 @@ In this case, a holdout sample approach was used to evaluate the sufficiency of 
 
 Five possible factor solutions are examined to find one with **the most** compelling interpretation. Although the p-values yielded from the maximum likelihood evaluation of the five factor solution suggested that none of them could adequately account for the variations in the data, the factors in the five factor model satisfy the principles of Thurstone’s simple structure. The first factor in this model loads highly on credit and annuity thus it could be labelled non-Income assets. The second one is a contrast between age and duration of employment. The third is dominated by continuous family members therefore it could be seen as a measure of client mobility. The fourth reflects income whereas the fifth seems like a weighted average.
 
-Insert table here
+<pre class="r"><code>#Call:
+factanal(x = train_sample, factors = 5) 
+</code></pre>
 
+Uniquenesses:
+
+|Income Amount | Credit Amount | Annuity | Region Pop | Days Birth | Days Employed | Days Registration | Days ID Publish | Fam Members | Last Phone Change|
+|--------------|-----|-----------|--------------|-----|-----------|--------------|-----|-----------|-----------|
+|0.394 | 0.005 | 0.350 | 0.947 | 0.342 | 0.165 | 0.760 | 0.782 | 0.675 | 0.929|
+
+Loadings: 
+| |Factor 1|Factor 2|Factor 3|Factor 4|Factor 5|
+|--|---|----|--|---|----|
+|Income Amount |0.218||0.106|0.735||
+|Credit Amount |0.979|||0.175||
+|Annuity |0.716|||0.356||
+|Region Pop ||||0.206||
+|Days Birth ||0.600|0.496||0.219|
+|Days Employed ||-0.841|-0.300||0.185|
+|Days Registration ||0.179|0.377||0.253|
+|Days ID Publish ||0.392|||0.248|
+|Fam Members |||0.546||-0.116|
+|Last Phone Change |||||0.258|
+
+| |Factor 1|Factor 2|Factor 3|Factor 4|Factor 5|
+|--|---|----|--|---|----|
+|SS loadings|1.532|1.263|0.802|0.753|0.301|
+|Proportion Var|0.153|0.126|0.080|0.075|0.030|
+|Cumulative Var|0.153|0.280|0.360|0.435|0.465|
 
 #### K Nearest Neighbors
 
@@ -115,15 +145,22 @@ Figure1 is the graph of the AER and TER for the KNN runs on values of K from 1:1
 
 We can see in Figure2 that the AER behaves essentially identically to the run with both error rates while the TER is markedly different in the beginning but then both continue to approach 0.08. This suggests that, as we increase k, we eliminate the Type I errors of our model on new data. Unfortunately the harmful Type II error rate is not eliminated and remains at 0.08. This means that we should expect 8% of the applicants given the go-ahead by our model to actually not repay their loans. On the upside however, if our model indicates an applicant cannot be trusted, it is almost always correct.
 
-Graph 1
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Error%20Rates.jpeg">
+</center>
 
-Graph 2
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/Error%20Rates2.jpeg">
+</center>
 
 #### Neural Networks
 
 The results obtained from the grid search process show that the **prediction accuracy increases as a function of the number of units in the hidden layer of the neural network**. There is also a discernible improvement in model quality for moderate weight decay values. The estimated true error rate was 8.64% and the apparent error rate was 8.87%. Both of these error rates are based on a majority class prediction.
 
-Insert graph here
+<center>
+<img align="middle" src="https://raw.githubusercontent.com/Nzaba/nzaba.github.io/main/content/posts/imgs/NN%20Performance.jpeg">
+</center>
+
 
 ### Conclusions
 
