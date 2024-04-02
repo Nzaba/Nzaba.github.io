@@ -2,43 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nzaba.github.io/tags/big-data-information-retrieval-graph-theory/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nzaba.github.io/posts/pagerank/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nzaba.github.io/posts/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nzaba.github.io/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nzaba.github.io/tags/</loc>
-    <lastmod>2023-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://nzaba.github.io/posts/defaultriskcalculations/</loc>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/posts/defaultriskcalculations/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nzaba.github.io/tags/machine-learning/</loc>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/posts/</loc>
     <lastmod>2020-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nzaba.github.io/posts/variancemodelling/</loc>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/tags/supervised-learning-neural-networks-classification-unsupervised-learning-factor-analysis/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/tags/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/posts/variancemodelling/</loc>
     <lastmod>2020-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nzaba.github.io/tags/time-series-forecasting/</loc>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/tags/public-health-ggplot-shiny-server/</loc>
     <lastmod>2020-11-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nzaba.github.io/posts/opioidcrisis/</loc>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/posts/opioidcrisis/</loc>
     <lastmod>2018-05-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://nzaba.github.io/tags/public-health/</loc>
-    <lastmod>2018-05-03T00:00:00+00:00</lastmod>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/categories/</loc>
   </url><url>
-    <loc>https://nzaba.github.io/categories/</loc>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/search/</loc>
   </url><url>
-    <loc>https://nzaba.github.io/search/</loc>
-  </url><url>
-    <loc>https://nzaba.github.io/series/</loc>
+    <loc>https://adityatelange.github.io/hugo-PaperMod/series/</loc>
   </url>
 </urlset>
